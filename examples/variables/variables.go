@@ -20,12 +20,13 @@ func main() {
 	fmt.Println(d)
 
 	// 声明后却没有给出对应的初始值时，变量将会初始化为 _零值_ 。
-	// 例如，`int` 的零值是 `0`。
+	// 例如，一个 `int` 型变量的零值是 `0`。
 	var e int
 	fmt.Println(e)
 
 	// `:=` 语法是声明并初始化变量的简写，
-	// 例如 `var f string = "short"` 可以简写为右边这样。
-	f := "short"
+	// 例如 `var f string = "apple"` 可以简写为右边这样。
+	// 这个语法仅能用于函数内部。
+	f := "apple"
 	fmt.Println(f)
 }
