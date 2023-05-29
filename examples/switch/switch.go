@@ -40,7 +40,7 @@ func main() {
 		fmt.Println("It's after noon")
 	}
 
-	// 类型开关 (`type switch`) 比较类型而非值。可以用来发现一个接口值的类型。
+	// `type switch` 语句比较类型而非值，可被用来检查接口值的类型。
 	// 在这个例子中，变量 `t` 在每个分支中会有相应的类型。
 	whatAmI := func(i interface{}) {
 		switch t := i.(type) {
