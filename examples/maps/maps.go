@@ -1,5 +1,5 @@
 // _map_ 是 Go 内建的[关联数据类型](http://zh.wikipedia.org/wiki/关联数组)
-// （在一些其他的语言中也被称为 _哈希(hash)_ 或者 _字典(dict)_ ）。
+// （在一些其他的语言中也被称为 _哈希（hash）_ 或者 _字典（dict）_ ）。
 
 package main
 
@@ -21,6 +21,11 @@ func main() {
 	v1 := m["k1"]
 	fmt.Println("v1: ", v1)
 
+	// 如果键不存在，
+	// 那么返回值是 map 的值类型的 [零值](https://go.dev/ref/spec#The_zero_value)。
+	v3 := m["k3"]
+	fmt.Println("v3:", v3)
+
 	// 内建函数 `len` 可以返回一个 map 的键值对数量。
 	fmt.Println("len:", len(m))
 
@@ -28,9 +33,9 @@ func main() {
 	delete(m, "k2")
 	fmt.Println("map:", m)
 
-	// 当从一个 map 中取值时，还有可以选择是否接收的第二个返回值，该值表明了 map 中是否存在这个键。
-	// 这可以用来消除 `键不存在` 和 `键的值为零值` 产生的歧义，
-	// 例如 `0` 和 `""`。这里我们不需要值，所以用 _空白标识符(blank identifier)_ _ 将其忽略。
+	// 当从一个 map 中取值时，有可选的第二个返回值，该值表明了 map 中是否存在这个键。
+	// 这可以用来消除「键不存在」和「键的值为零值（例如 `0` 和 `""`）」之间的歧义。
+	// 这里我们不需要值，所以用 _空白标识符（blank identifier）_ _ 将其忽略。
 	_, prs := m["k2"]
 	fmt.Println("prs:", prs)
 
